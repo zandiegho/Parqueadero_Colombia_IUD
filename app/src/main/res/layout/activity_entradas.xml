@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Entradas">
+
+    <TextView
+        android:id="@+id/txt_encabezado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registra el Tipo de Vechulo y la placa  para realizar ingreso al parqueadero"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        />
+
+    <TextView
+        android:id="@+id/txt_tipoVehiculo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tipo de Vehículo"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="25dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/txt_encabezado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linear_img_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_tipoVehiculo">
+
+        <ImageButton
+            android:id="@+id/imgBtn_car"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:src="@drawable/tip_auto"
+            android:background="@null"/>
+
+        <ImageButton
+            android:id="@+id/imgBtn_moto"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:src="@drawable/tipo_moto"
+            android:background="@null"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_txtVehiculoSeleccionado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Vehículo Seleeccionado"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="25dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/linear_img_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/edt_VehiculoSeleccionado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:padding="10dp"
+        android:text="vehiculo selecionado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_txtVehiculoSeleccionado"
+        android:background="#2FC3C3C3"
+        android:enabled="false"
+        />
+
+    <TextView
+        android:id="@+id/txt_placa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Placa"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="25dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/edt_VehiculoSeleccionado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/edt_placa_entrada"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:padding="10dp"
+        android:hint="Ingrese la placa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_placa"
+        android:background="#2FC3C3C3"
+        />
+
+    <Button
+        android:id="@+id/btn_registrarEntrada"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registrar Entrada"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_placa_entrada"
+        app:layout_constraintVertical_bias="1.0"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
