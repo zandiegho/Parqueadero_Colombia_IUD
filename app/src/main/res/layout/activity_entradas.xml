@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EBC0EF"
     tools:context=".Entradas">
 
     <TextView
@@ -89,7 +90,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txt_txtVehiculoSeleccionado"
-        android:background="#2FC3C3C3"
+        android:background="#C4C4C4"
         android:enabled="false"
         />
 
@@ -115,25 +116,29 @@
         android:layout_marginEnd="25dp"
         android:padding="10dp"
         android:hint="Ingrese la placa"
+        android:background="#C4C4C4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txt_placa"
-        android:background="#2FC3C3C3"
         />
 
     <Button
         android:id="@+id/btn_registrarEntrada"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        android:textSize="18sp"
         android:text="Registrar Entrada"
+        android:backgroundTint="@color/amarillo"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_placa_entrada"
         app:layout_constraintVertical_bias="1.0"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
 
         />
 

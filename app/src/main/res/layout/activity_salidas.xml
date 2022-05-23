@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EBC0EF"
     tools:context=".Salidas">
 
     <TextView
@@ -47,7 +48,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txt_placa_salidas"
-        android:background="#2FC3C3C3"
+        android:background="#c4c4c4"
         />
 
     <ImageView
@@ -66,8 +67,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Registrar Salida"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:padding="10dp"
+        android:backgroundTint="@color/amarillo"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
