@@ -5,10 +5,13 @@
       <map>
         <entry key="..\:/IUD/Ingenieria del software/Tarea 1/App Parqueaderos Colombia/app/src/main/res/drawable/rounded_bottom.xml" value="0.2203125" />
         <entry key="..\:/IUD/Ingenieria del software/Tarea 1/App Parqueaderos Colombia/app/src/main/res/drawable/rounded_bottom_salidas.xml" value="0.2203125" />
+        <entry key="..\:/IUD/Ingenieria del software/Tarea 1/App Parqueaderos Colombia/app/src/main/res/layout/activity_celdas.xml" value="0.209375" />
         <entry key="..\:/IUD/Ingenieria del software/Tarea 1/App Parqueaderos Colombia/app/src/main/res/layout/activity_entradas.xml" value="0.25" />
         <entry key="..\:/IUD/Ingenieria del software/Tarea 1/App Parqueaderos Colombia/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/IUD/Ingenieria del software/Tarea 1/App Parqueaderos Colombia/app/src/main/res/layout/activity_registro_usuarios.xml" value="0.209375" />
         <entry key="..\:/IUD/Ingenieria del software/Tarea 1/App Parqueaderos Colombia/app/src/main/res/layout/activity_salidas.xml" value="0.20416666666666666" />
         <entry key="..\:/IUD/Ingenieria del software/Tarea 1/App Parqueaderos Colombia/app/src/main/res/layout/activity_splash_screen.xml" value="0.20416666666666666" />
+        <entry key="..\:/IUD/Ingenieria del software/Tarea 1/App Parqueaderos Colombia/app/src/main/res/layout/activity_usuarios.xml" value="0.25" />
         <entry key="..\:/IUD/Ingenieria del software/Tarea 1/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
       </map>
     </option>
