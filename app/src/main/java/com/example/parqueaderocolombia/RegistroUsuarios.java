@@ -20,7 +20,7 @@ public class RegistroUsuarios extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_usuarios);
 
-        edt_NombreUsuario = findViewById(R.id.ed)
+        edt_NombreUsuario = findViewById(R.id.edt_Nuevocliente);
 
         registarUsuario();
     }

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         btn_Entrada = findViewById(R.id.btn_entradas);
         btn_Salida = findViewById(R.id.btn_salidas);
+
         btn_Usuarios = findViewById(R.id.btn_Usuarios);
         btn_celdas = findViewById(R.id.btn_Celdas);
 
@@ -42,16 +44,25 @@ public class MainActivity extends AppCompatActivity {
         btn_Usuarios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                /* Habilitar para una nueva Iteración
                 Intent i_Usuarios = new Intent(MainActivity.this, Usuarios.class);
-                startActivity(i_Usuarios);
+                startActivity(i_Usuarios); */
+
+                Toast.makeText(MainActivity.this, "Aun no esta habilidad esta Iteracion", Toast.LENGTH_SHORT).show();
             }
         });
 
         btn_celdas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i_Celdas = new Intent(MainActivity.this, Celdas.class);
-                startActivity(i_Celdas);
+
+                // Habilitar para una nueva Iteración
+
+                /*Intent i_Celdas = new Intent(MainActivity.this, Celdas.class);
+                startActivity(i_Celdas); */
+
+                Toast.makeText(MainActivity.this, "Aun no esta habilidad esta Iteracion", Toast.LENGTH_SHORT).show();
+
             }
         });
     }
