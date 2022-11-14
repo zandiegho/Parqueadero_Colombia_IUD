@@ -1,25 +1,31 @@
 package com.example.parqueaderocolombia;
 
-import androidx.annotation.RequiresApi;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.content.ContentValues;
-import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
 import java.sql.Time;
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalTime;
-import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Entradas extends AppCompatActivity {
 
@@ -48,7 +54,7 @@ public class Entradas extends AppCompatActivity {
         btn_entrada.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    RegistrarEntrada();
+                RegistrarEntrada("http://192.168.58.2:80/ParqueaderoCol/insertar.php");
             }
         });
     }
@@ -73,16 +79,57 @@ public class Entradas extends AppCompatActivity {
         });
     }
 
-    private void CapturaHora(){
+    public void CapturaHora() {
         //int i = (int) (new Date().getTime()/1000);
         hora = System.currentTimeMillis();
-        @SuppressLint("SimpleDateFormat") SimpleDateFormat formatter = new SimpleDateFormat ("HH:mm:ss");
         time = new Time(hora);
         //Toast.makeText(getApplicationContext(), "la hora es: "+formatter.format(time), Toast.LENGTH_LONG).show();
     }
 
-    public void RegistrarEntrada(){
-        AdminDatabase adminDatabase = new AdminDatabase(getApplicationContext(), "Parqueadero", null, 1);
+    public void RegistrarEntrada(String URL){
+        //capturamos la Hora
+        CapturaHora();
+
+        //COndicionamos formato para la fecha y hora
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat formatter = new SimpleDateFormat ("yyyy-MM-dd hh:mm:ss");
+
+        //Creacion de la petición post para el web service de PHP
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                //Si la conexión es Correcta
+                Toast.makeText(Entradas.this, "Entrada Exitosa, hora: "+time, Toast.LENGTH_SHORT).show();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                //Si la conexión es Incorrecta
+                Toast.makeText(Entradas.this, error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        }) {
+            @Nullable
+            @Override
+            //Enviamos los Datos al Web service para que pase a BD
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> parametros = new HashMap<>();
+                parametros.put("placa",  edt_placaEntrada.getText().toString());
+                parametros.put("vehiculo",  edt_vehiculoSeleccionado.getText().toString());
+                parametros.put("hora", formatter.format(time));
+                parametros.put("registro",  "Ingresado");
+
+                return parametros;
+            }
+        };
+        //Iniciamos peticion
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+
+
+        /**
+         * esta instacia sugar se va a eliminar para la proxima peticion.
+         */
+        //Anterior BD SUGAR
+        /*AdminDatabase adminDatabase = new AdminDatabase(getApplicationContext(), "Parqueadero", null, 1);
         SQLiteDatabase db = adminDatabase.getWritableDatabase();
 
         placaIngresada = edt_placaEntrada.getText().toString();
@@ -116,7 +163,7 @@ public class Entradas extends AppCompatActivity {
             }
         }else {
             Toast.makeText(getApplicationContext(), "Debe Ingresar una placa valida", Toast.LENGTH_LONG).show();
-        }
+        }*/
     }
 
 
